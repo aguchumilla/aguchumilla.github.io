@@ -1,0 +1,660 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* fondo circular 
+background-image: radial-gradient(circle at center center, #f9f9f9, #fefefe), repeating-radial-gradient(circle at center center, #f9f9f9, #f9f9f9, 28px, transparent 56px, transparent 28px);
+background-blend-mode: multiply;
+background-color: #fefefe; */
+
+
+/* Custom properties */
+:root {
+    --padding-container: 100px 0;
+    --color-title: rgb(37, 1, 120);
+    --primary-color: rgb(37, 1, 138);
+    --secondary-color: #fdede3;
+    --third-color: #0a0b4e;
+    --third-bis-color: #00109e;
+    --color-muni: #12bc8e;
+    /*colores de fondo*/
+    --bg-color: #141419;
+    --bg-input-color: #1b1b358c;
+    --bg-muni: #2d2d2d;
+    --bg-muni2: #444;
+    /*fuente primaria*/
+    --primary-font: "Nunito", "Poppins", Arial, sans-serif, helvetica;
+
+}
+
+body {
+    font-family: var(--primary-font);
+
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    /* background-color: var(--bg-color); */
+    padding: var(--padding-container);
+
+}
+
+.enlace {
+    text-decoration: none;
+    color: var(--color-muni);
+}
+
+/* banner de inicio */
+.hero {
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    /* max-width: 1600px; */
+    position: relative;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    color: var(--secondary-color);
+}
+
+/* Esto del before lo hago porque hay un problema con position fixed es hijo de un clip path se fija al clip path en vez de al navegador */
+.hero::before {
+    content: "";
+    position: absolute;
+    /* El padre de este es hero. Por eso está esta linea para que se adapte a el*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url(../images/molino5.jpg);
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 95%, 0 90%);
+    /* Le da esa forma de poligono a la imagen */
+    z-index: -1;
+}
+
+
+/*------------------------ Header Nav ------------------ */
+.nav {
+    --padding-container: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+.nav_title {
+    font-weight: 300;
+}
+
+.nav_link {
+    margin-left: auto;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 2em;
+}
+
+.nav_links:hover {
+    color: var(--color-muni);
+
+}
+
+.nav_items {
+    list-style: none;
+}
+
+.nav_links {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.nav_menu {
+    margin-left: auto;
+    cursor: pointer;
+    display: none;
+    /* no se debe mostrar hasta cierto tamaño de pantalla  */
+}
+
+.nav_img {
+    display: block;
+    width: 30px;
+}
+
+.nav_close {
+    display: var(--show, none);
+}
+
+/* --------------- Hero Container (BANNER) ---------------*/
+.hero_container {
+    max-width: 1600px;
+    --padding-container: 0;
+    display: grid;
+    grid-auto-rows: max-content;
+    align-content: center;
+    gap: 1em;
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+/* titulo del banner */
+.hero_title {
+    font-size: 3rem;
+}
+
+/* parrafo */
+.hero_p {
+    margin-bottom: 20px;
+    max-width: 1600px;
+}
+
+/* boton */
+.cta {
+    display: inline-block;
+    /* background-color:var(--bg-input-color); */
+    background-color: #12bc8e;
+    justify-self: center;
+    color: var(--secondary-color);
+    text-decoration: none;
+    padding: 13px 28px;
+    border-radius: 28px;
+}
+
+.cta:hover {
+    background-color: var(--bg-muni2);
+}
+
+/* ------------------ABOUT----------------- (Conocé más) */
+.about {
+    text-align: center;
+}
+
+.subtitle {
+    color: var(--color-title);
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+.about_p {
+    line-height: 1.7;
+}
+
+.about_main {
+    padding-top: 80px;
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+    gap: 3em;
+    overflow: hidden; 
+    justify-content: center;
+    align-items: start;
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+}
+
+.about_icons {
+    height: 100%;
+    display: grid;
+    gap: 1em;
+    justify-items: center;
+    align-content: flex-start;
+    width: 260px;
+    overflow: hidden;
+    margin: auto;
+}
+
+.about_icon {
+    width: 40px;
+}
+
+
+/* ------------------ knowledge (Liceo municipal) --------------*/
+.knowledge {
+    background-color: var(--bg-input-color);
+    /* opacity: 0.8; */
+    background-image: radial-gradient(#fff 1px, #f7f3e5f6 0.5px);
+    background-size: 20px 20px;
+    overflow: hidden;
+}
+
+/* contenedor de todo en esta section */
+.knowledge_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    align-items: center;
+}
+
+.knowledge_picture {
+    max-width: 589px;
+    display: hidden;
+}
+
+.knowledge_p {
+    line-height: 1.7;
+    margin-bottom: 35px;
+
+}
+
+.knowledge_figuras {
+    display: block;
+    width: 99%;
+}
+
+.knowledge_img {
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+    box-shadow: 0 0 5px var(--bg-color);
+}
+
+.knowledge_map {
+    width: 100%;
+    display: block;
+    margin-top: 15px;
+}
+
+.knowledge_mapa {
+    width: 99.5%;
+    box-shadow: 0 0 5px var(--bg-color);
+}
+
+/* ----------------- News (Novedades) --------------- */
+
+.news {
+    /* color: #e5e5f7; */
+
+    background-color: #f8f8f8;
+}
+
+.news_container {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    gap: 1.3em;
+    /* Espaciado entre columnas */
+    align-items: center;
+    /* Centrado vertical */
+}
+
+.news_body {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    grid-column: 2/3;
+    /* Empieza en la segunda linea de columna y termina en la tercera */
+    grid-row: 1/2;
+    /* Empieza en la primera linea y termina en las segunda */
+    opacity: 0;
+    /* No se ven */
+    pointer-events: none;
+    /* No se pueden seleccionarcon el mouse */
+}
+
+.news_body--show {
+    pointer-events: unset;
+    /* Se pueden seleccionar normalmente*/
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
+    /* NO SE PORQUE NO ANDA */
+}
+
+.news_picture {
+    top: 50%;
+}
+
+.news_img {
+    width: 250px;
+    height: 250px;
+    top: 50%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 50%;
+
+}
+
+.news_texts {
+    max-width: 700px;
+}
+
+.news_arrow {
+    margin-inline-start: 5%;
+    border-radius: 50%;
+    /* box-shadow: 0 0 5px var(--bg-color); */
+    width: 90%;
+    cursor: pointer;
+}
+
+
+
+/* -----------------propuestas------------------ */
+
+.propuestas {
+    text-align: center;
+}
+
+.propuestas_container {
+    display: grid;
+    gap: 2em;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.propuestas_padding {
+    padding: 0;
+    transition: padding 0.3s;
+    border: 1px solid var(--third-color);
+    border-radius: 6px;
+}
+
+.propuestas_padding--add {
+    padding-bottom: 30px;
+}
+
+.propuestas_answer {
+    padding: 0 30px 0;
+    overflow: hidden;
+}
+
+.propuestas_title {
+    display: flex;
+    font-size: 20px;
+    text-align: left;
+    padding: 30px 0 30px;
+    cursor: pointer;
+    color: var(--color-title);
+    justify-content: space-between;
+}
+
+.propuestas_arrow {
+    border-radius: 50%;
+    background-color: var(--color-title);
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    margin-left: 10px;
+    transition: transform .3s;
+}
+
+.propuestas_arrow--rotate {
+    transform: rotate(180deg);
+}
+
+.propuestas_show {
+    text-align: left;
+    height: 0;
+    transition: height .3s;
+}
+
+.propuestas_img {
+    display: block;
+}
+
+/* Inscripciones */
+.propuestas_offer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    text-align: left;
+}
+
+.offer_title {
+    color: var(--color-title);
+    padding-bottom: 15px;
+}
+
+.offer_p {
+    line-height: 1.7;
+}
+
+/* ---------------------Footer---------------------- */
+.footer {
+    padding: 0%;
+    margin: 0;
+    background-color: var(--bg-color);
+}
+
+.footer_title {
+    font-weight: 300;
+    font-size: 2rem;
+    /* margin-bottom: 30px; */
+    color: var(--secondary-color)
+}
+
+.footer_container {
+    padding: 50px;
+    border-bottom: 1px solid var(--secondary-color);
+    padding-bottom: 50px;
+}
+
+.nav--footer {
+    padding-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    height: 100%;
+}
+
+.nav_link--footer {
+    display: flex;
+    margin: 0;
+    margin-right: 20px;
+    flex-wrap: wrap;
+}
+
+.footer_copy {
+    --padding-container: 30px 0;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.footer_copyright {
+    font-weight: 300;
+}
+
+.footer_icons {
+    display: inline-flex;
+    margin-bottom: 10px;
+}
+
+.footer_img {
+    width: 32px;
+}
+
+.footer_img:hover {
+    border-radius: 50%;
+    background-color: var(--color-muni);
+
+}
+
+
+/* ---------- MEDIA QUERIES - RESPONSIVE --------------*/
+
+/* ------------ 800px---------------- */
+@media (max-width: 800px) {
+/* ----------- menu desplegable ----------  */
+    .nav_menu {
+        display: block;
+    }
+
+    .nav_link--menu {
+        list-style: none;
+        padding: 20px 20px 0 20px;
+        /* Agrega padding en la parte superior */
+        margin: 0;
+        width: 100%;
+        max-width: 400px;
+        /* Ancho máximo */
+        background-color: #2d2d2d;
+        color: var(--secondary-color);
+        position: fixed;
+        height: 100%;
+        top: 0;
+        right: 0;
+        /* Menú en el lado derecho */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        z-index: 100;
+        /* opacity:0; */
+        pointer-events: none;
+        transform: translateX(100%);
+        /* Lo mueve fuera de la pantalla a la derecha */
+        transition: transform 0.3s ease-in;
+        /* Añade la transición suave */
+    }
+
+    .nav_link--show {
+        --show: block;
+        transform: translateX(0);
+        /* Lo mueve a su posición final */
+        right: 0;
+        /* Asegura que esté en el lugar correcto */
+        padding: 15px 20px;
+        pointer-events: unset;
+
+    }
+
+    .nav_items {
+        margin: 10px 0;
+        margin: 20% #0000008c;
+    }
+
+    .nav_links {
+        text-decoration: none;
+        color: #fff;
+        font-size: 18px;
+        padding: 15px 20px;
+        display: block;
+        transition: color 0.3s ease, background-color 0.3s ease;
+        text-align: left;
+        background-color: transparent;
+    }
+
+    .nav_close {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        align-self: flex-end;
+        /* Alinear a la derecha */
+        margin: 20px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+/*-------- hero(banner) -------  */
+    .hero_title{
+        font-size: 2.5rem;
+    }
+/* -------------about---------- */
+    .about_main{
+        gap:2em;
+
+    }
+     /* Esto se usaria si serian 3 por ejemplo para que aparezca el ultimo puesto en el medio */
+    /* .about_icons:last-of-type{
+        grid-column: 1/-1;
+    } */
+
+/* -----------knowledge(liceo)----------- */
+    .knowledge_container{
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content 1fr;
+        gap:3em;
+        text-align: center;
+    }
+    .knowledge_picture{
+        max-width: 800px;
+    }
+
+    .knowledge_figuras{
+        /* grid-row: 1/2; */
+        justify-self: center; /* Centrado horizontal */
+    }
+
+/* ---------- news-------- */
+    .news_container{
+        grid-template-columns: 30px 1fr 30px;
+
+    }
+    .news_body{
+        grid-template-columns: 1fr;         /* 1 sola columna de 1fr */
+        grid-template-rows: max-content max-content;    /* cada fila al max */
+        gap: 3em;   /*  separacion */
+        justify-items: center; /* centrado horizontal */
+    }
+
+    .news_img{
+        width: 200px;
+        height: 200px;
+    }
+    
+
+    /* propuestas */
+    .propuestas_offer{
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content max-content;
+        
+    }
+    .offer_icon{
+        flex-wrap: wrap; 
+    }
+/* ---------footer--------- */
+    .footer_container{
+        justify-items: center;
+    }
+    .nav--footer{
+        flex-wrap: wrap;
+        width: 100%;
+        justify-items: center;
+        justify-content: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content max-content;
+    }
+    .nav_link--footer{
+        width: 100%;
+        margin: 0;
+        justify-content: space-evenly;
+    }
+}
+
+
+/* 600px */
+@media (max-width: 600px) {
+    .hero_title{
+        font-size: 2rem;
+    }
+    .hero_p{
+        font-size: 1rem;
+    }
+    .subtitle{
+        font-size: 1.8rem;
+    }
+    /* news */
+    .news{
+        --padding-container: 60px 0;
+    }
+    .news_container{
+        grid-template-columns: 28px 1fr 28px;
+        gap: 0.9em;
+    }
+    .news_arrow{
+        width: 100%;
+    }
+    /* propuestas */
+    .propuestas_title{
+        font-size: 1rem;
+    }
+    /* Footer */
+    .footer_title{
+        justify-self: start; /* Lo manda al principio de su contenedor */
+    }
+}
