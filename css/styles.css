@@ -12,10 +12,11 @@ background-color: #fefefe; */
     --padding-container: 100px 0;
     --color-title: rgb(37, 1, 120);
     --primary-color: rgb(37, 1, 138);
-    --secondary-color: #fdede3;
+    --secondary-color: #fdf9f7;
     --third-color: #0a0b4e;
     --third-bis-color: #00109e;
     --color-muni: #12bc8e;
+    --color-muni-error: #c04e4e;
     /*colores de fondo*/
     --bg-color: #141419;
     --bg-input-color: #1b1b358c;
@@ -24,6 +25,11 @@ background-color: #fefefe; */
     /*fuente primaria*/
     --primary-font: "Nunito", "Poppins", Arial, sans-serif, helvetica;
 
+}
+
+/* transiciones entre partes suaves */
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -44,6 +50,57 @@ body {
 .enlace {
     text-decoration: none;
     color: var(--color-muni);
+}
+
+.enlace:hover {
+    color: var(--bg-muni2);
+}
+
+.boton_subir{
+    opacity: 0; /* Inicialmente invisible */
+    visibility: hidden; /* Oculta el botón, pero sigue ocupando espacio */
+    transition: opacity 0.4s ease, visibility 0.4s ease; /* Transición suave para la opacidad y visibilidad */
+}
+
+.boton_subir.boton_subir--show {
+    opacity: 1; /* Hace el botón visible */
+    visibility: visible; /* Lo muestra completamente */
+    z-index: 10;
+}
+.scroll_a {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    background-color: var(--color-muni);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll_img {
+    height: 100%;
+}
+
+@keyframes moveUpAndDown {
+    /* animacion para cuando esta el hover del scroll */
+    0%{
+        transform: translateY(3);
+    }
+    100% {
+        transform: translateY(-3px);
+    }
+}
+
+.scroll_a:hover {
+    .scroll_img {
+        animation: moveUpAndDown 0.6s infinite alternate;
+    }
 }
 
 /* banner de inicio */
@@ -71,7 +128,7 @@ body {
     background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url(../images/molino5.jpg);
     background-size: cover;
     clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 95%, 0 90%);
-    /* Le da esa forma de poligono a la imagen */
+    /* Le da esa forma de poligono a la imagen, lo hace una pagina */
     z-index: -1;
 }
 
@@ -82,7 +139,6 @@ body {
     height: 100%;
     display: flex;
     align-items: center;
-
 }
 
 .nav_title {
@@ -96,10 +152,12 @@ body {
     grid-auto-flow: column;
     grid-auto-columns: max-content;
     gap: 2em;
+    transition: background-color 0.2s ease;
 }
 
 .nav_links:hover {
     color: var(--color-muni);
+    cursor: pointer;
 
 }
 
@@ -161,9 +219,11 @@ body {
     text-decoration: none;
     padding: 13px 28px;
     border-radius: 28px;
+    transition: background-color 0.2s ease;
 }
 
 .cta:hover {
+    cursor: pointer;
     background-color: var(--bg-muni2);
 }
 
@@ -188,7 +248,7 @@ body {
     width: 90%;
     margin: 0 auto;
     gap: 3em;
-    overflow: hidden; 
+    overflow: hidden;
     justify-content: center;
     align-items: start;
     grid-template-columns: repeat(auto-fit, minmax(260px, auto));
@@ -413,6 +473,141 @@ body {
     line-height: 1.7;
 }
 
+/* ------------------- Contacto ---------------------- */
+.contacto {
+    padding: 50px 0;
+    /* background-color*/
+}
+
+.contacto_container {
+    margin: 0 auto;
+    padding: 0;
+    --padding-container: 0;
+    justify-items: center;
+}
+
+/* Title styles */
+.contacto_title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    align-items: left;
+}
+
+.contacto_subtitle {
+    font-size: 1.5rem;
+    padding-bottom: 50px;
+}
+
+/* Form styles */
+.contacto_menu {
+    font-size: 1em;
+    font-weight: 400;
+    margin: 0;
+    /* Asegura que no haya márgenes */
+    padding: 0;
+    /* Asegura que no haya padding */
+    color: #333;
+}
+
+.contacto_menu label {
+    font-size: 0.9rem;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contacto_espacio {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid #9797978c;
+    font-size: 1rem;
+    transition: box-shadow 0.5s ease;
+}
+
+.contacto_espacio:focus {
+    outline: none;
+    border: 1px solid var(--color-muni);
+    box-shadow: 0 0 5px var(--color-muni);
+}
+
+
+/* Submit button styles */
+.contacto_boton {
+    display: inline-block;
+    /* background-color:var(--bg-input-color); */
+    background-color: var(--bg-muni2);
+    justify-self: center;
+    color: var(--secondary-color);
+    text-decoration: none;
+    padding: 15px 30px;
+    border: 0;
+    border-radius: 28px;
+    margin-bottom: 30px;
+    transition: background-color 0.2s ease;
+}
+
+.contacto_boton:hover {
+    cursor: pointer;
+    background-color: var(--color-muni);
+}
+
+
+
+/* Align the "Terminos y condiciones" with the checkbox */
+.contacto_p {
+    font-size: 0.9rem;
+    color: #333;
+    display: flex;
+    margin-top: 30px;
+    ;
+    margin-bottom: 30px;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.contacto_checkbox {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.consulta_aceptada {
+    pointer-events: none;
+    display: inline-block;
+    position: absolute;
+    opacity: 0;
+    margin-left: 50px;
+    margin-right: 30px;
+    color: var(--color-muni);
+    border: 1px solid var(--color-muni);
+    margin-top: 0;
+    padding: 15px 15px;
+}
+
+.consulta_rechazada {
+    pointer-events: none;
+    display: inline-block;
+    position: absolute;
+    opacity: 0;
+    margin-left: 70px;
+    margin-right: 30px;
+    color: var(--color-muni-error);
+    border: 1px solid var(--color-muni-error);
+    margin-top: 0;
+    padding: 15px 15px;
+}
+
+.contacto_info {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    font-size: 1.1rem;
+    font-weight: 350;
+    line-height: 1.7;
+}
+
 /* ---------------------Footer---------------------- */
 .footer {
     padding: 0%;
@@ -466,12 +661,13 @@ body {
 
 .footer_img {
     width: 32px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
 }
 
 .footer_img:hover {
-    border-radius: 50%;
     background-color: var(--color-muni);
-
+    cursor: pointer;
 }
 
 
@@ -479,7 +675,8 @@ body {
 
 /* ------------ 800px---------------- */
 @media (max-width: 800px) {
-/* ----------- menu desplegable ----------  */
+
+    /* ----------- menu desplegable ----------  */
     .nav_menu {
         display: block;
     }
@@ -520,7 +717,6 @@ body {
         /* Asegura que esté en el lugar correcto */
         padding: 15px 20px;
         pointer-events: unset;
-
     }
 
     .nav_items {
@@ -550,68 +746,81 @@ body {
         top: 0;
         right: 0;
     }
-/*-------- hero(banner) -------  */
-    .hero_title{
+
+    /*-------- hero(banner) -------  */
+    .hero_title {
         font-size: 2.5rem;
     }
-/* -------------about---------- */
-    .about_main{
-        gap:2em;
+
+    /* -------------about---------- */
+    .about_main {
+        gap: 2em;
 
     }
-     /* Esto se usaria si serian 3 por ejemplo para que aparezca el ultimo puesto en el medio */
+
+    /* Esto se usaria si serian 3 por ejemplo para que aparezca el ultimo puesto en el medio */
     /* .about_icons:last-of-type{
         grid-column: 1/-1;
     } */
 
-/* -----------knowledge(liceo)----------- */
-    .knowledge_container{
+    /* -----------knowledge(liceo)----------- */
+    .knowledge_container {
         grid-template-columns: 1fr;
         grid-template-rows: max-content 1fr;
-        gap:3em;
+        gap: 3em;
         text-align: center;
     }
-    .knowledge_picture{
+
+    .knowledge_picture {
         max-width: 800px;
     }
 
-    .knowledge_figuras{
+    .knowledge_figuras {
         /* grid-row: 1/2; */
-        justify-self: center; /* Centrado horizontal */
+        justify-self: center;
+        /* Centrado horizontal */
     }
 
-/* ---------- news-------- */
-    .news_container{
+    /* ---------- news-------- */
+    .news_container {
         grid-template-columns: 30px 1fr 30px;
 
     }
-    .news_body{
-        grid-template-columns: 1fr;         /* 1 sola columna de 1fr */
-        grid-template-rows: max-content max-content;    /* cada fila al max */
-        gap: 3em;   /*  separacion */
-        justify-items: center; /* centrado horizontal */
+
+    .news_body {
+        grid-template-columns: 1fr;
+        /* 1 sola columna de 1fr */
+        grid-template-rows: max-content max-content;
+        /* cada fila al max */
+        gap: 3em;
+        /*  separacion */
+        justify-items: center;
+        /* centrado horizontal */
     }
 
-    .news_img{
+    .news_img {
         width: 200px;
         height: 200px;
     }
-    
+
 
     /* propuestas */
-    .propuestas_offer{
+    .propuestas_offer {
         grid-template-columns: 1fr;
         grid-template-rows: max-content max-content;
-        
+
     }
-    .offer_icon{
-        flex-wrap: wrap; 
+
+    .offer_icon {
+        flex-wrap: wrap;
     }
-/* ---------footer--------- */
-    .footer_container{
+
+    /* ---------footer--------- */
+    .footer_container {
         justify-items: center;
     }
-    .nav--footer{
+
+    .nav--footer {
         flex-wrap: wrap;
         width: 100%;
         justify-items: center;
@@ -619,7 +828,8 @@ body {
         grid-template-columns: 1fr;
         grid-template-rows: max-content max-content;
     }
-    .nav_link--footer{
+
+    .nav_link--footer {
         width: 100%;
         margin: 0;
         justify-content: space-evenly;
@@ -629,32 +839,55 @@ body {
 
 /* 600px */
 @media (max-width: 600px) {
-    .hero_title{
+    .hero_title {
         font-size: 2rem;
     }
-    .hero_p{
+
+    .hero_p {
         font-size: 1rem;
     }
-    .subtitle{
+
+    .subtitle {
         font-size: 1.8rem;
     }
+
     /* news */
-    .news{
+    .news {
         --padding-container: 60px 0;
     }
-    .news_container{
+
+    .news_container {
         grid-template-columns: 28px 1fr 28px;
         gap: 0.9em;
     }
-    .news_arrow{
+
+    .news_arrow {
         width: 100%;
     }
+
     /* propuestas */
-    .propuestas_title{
+    .propuestas_title {
         font-size: 1rem;
     }
+
     /* Footer */
-    .footer_title{
-        justify-self: start; /* Lo manda al principio de su contenedor */
+    .footer_title {
+        justify-self: start;
+        /* Lo manda al principio de su contenedor */
+    }
+
+    .consulta_aceptada {
+        margin-left: 0;
+        margin-right: 20px;
+        display: block;
+
+    }
+
+    .consulta_rechazada {
+        margin-left: 0;
+        margin-right: 10px;
+        max-width: max-content;
+        display: block;
+        position: relative;
     }
 }

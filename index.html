@@ -11,7 +11,7 @@
 
     <!-- meta -->
     <meta name="theme-color" content="#2091f9">
-        
+
     <meta name="title" content="Escuela de Expresión Estética Infantil - Santa Fe" />
     <meta name="description"
         content="Página oficial de la EdEII. Accedé a información sobre la Escuela de Expresión Estética Infantil de Santa Fe, perteneciente al Liceo Municipal." />
@@ -19,8 +19,7 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url"
-        content="https://aguchumilla.github.io" />
+    <meta property="og:url" content="https://aguchumilla.github.io" />
     <meta property="og:title" content="Escuela de Expresión Estética Infantil - Santa Fe" />
     <meta property="og:description"
         content="Página oficial de la EdEII. Accedé a información sobre la Escuela de Expresión Estética Infantil de Santa Fe, perteneciente al Liceo Municipal." />
@@ -39,7 +38,7 @@
 
 
 <body>
-    <header class="hero" id="inicio_pag">
+    <header class="hero" id="inicio">
         <!-- Barra -->
         <nav class="nav container">
             <div class="nav_logo">
@@ -51,19 +50,19 @@
                 </li>
 
                 <li class="nav_items">
-                    <a href="#" class="nav_links">Conocé más</a>
+                    <a href="#about" class="nav_links">Conocé más</a>
                 </li>
 
                 <li class="nav_items">
-                    <a href="#" class="nav_links">Propuestas</a>
+                    <a href="#propuestas" class="nav_links">Propuestas</a>
                 </li>
 
                 <li class="nav_items">
-                    <a href="#" class="nav_links">Novedades</a>
+                    <a href="#news" class="nav_links">Novedades</a>
                 </li>
 
                 <li class="nav_items">
-                    <a href="#" class="nav_links">Contacto</a>
+                    <a href="#contacto" class="nav_links">Contacto</a>
                 </li>
 
                 <img src="./images/close.svg" alt="Cerrar menu" class="nav_close">
@@ -76,25 +75,26 @@
         <!------- HERO - Seccion del Banner de presentacion del edeei -->
         <section class="hero_container container">
             <h1 class="hero_title">Escuela de Expresión Estética Infantil</h1>
-            <p class="hero_p">La EdEEI tiene una larga trayectoria como institución dedicada a la iniciación artística
-                de la población infantil. Abierta a niños y niñas de entre 4 a 15 años, de forma publica y gratuita.
-                <br>
+            <p class="hero_p">
                 Mediante diferentes ciclos de actividades integradas y específicas, los niños y niñas recorren trayectos
                 educativos de sensibilización artística.
+                <br>
+                La EdEEI tiene una larga trayectoria como institución dedicada a la iniciación artística
+                de la población infantil. Abierta a niños y niñas de entre 4 a 15 años, de forma publica y gratuita.
             </p>
-            <a href="#" class="cta">¡Consultá!</a>
+            <a href="#contacto" class="cta">¡Consultá!</a>
         </section>
     </header>
 
     <!---------- Boton de subir al inicio ----------->
-    <div class="boton_subir" id="boton_subir">
-        <a href="#inicio_pag"></a>
+    <div class="boton_subir" id="scroll_to_top">
+        <a href="#inicio" class="scroll_a"><img src="./images/circle_up.svg" alt="Icono de ir al inicio de página" class="scroll_img"></a>
     </div>
 
     <main>
 
         <!------- About - Sección de contenidos de edeei  (Conocé más)-->
-        <section class="container about">
+        <section class="container about" id="about">
             <h2 class="subtitle">Expresiones artísticas</h2>
             <p class="about_p">En la EDEEI se trabaja colectivamente en el marco de talleres de distintas disciplinas
                 artísticas en constante diálogo y articulación. Sobre todo en los primeros años de infancia, este
@@ -149,7 +149,7 @@
         </section>
 
         <!------- Knowledge - Sección de Liceo Municipal --------->
-        <section class="knowledge">
+        <section class="knowledge" id="liceo">
             <div class="knowledge_container container">
                 <div class="knowledge_texts">
                     <h2 class="subtitle">Liceo Municipal</h2>
@@ -179,64 +179,9 @@
             </div>
         </section>
 
-        <!------- NEWS - Sección de Novedades ---------->
-        <section class="news">
-            <div class="news_container container">
-                <!-- Flecha before (izquierda) -->
-                <img src="./images/left_arrow.svg" alt="Ícono de flecha hacia la izquierda" class="news_arrow"
-                    id="before">
-                <!-- 1 -->
-                <section class="news_body news_body--show" data-id="1">
-                    <div class="news_texts">
-                        <h2 class="subtitle">Estudiantina<span class="news_course"></span></h2>
-                        <p class="news_p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut earum quibusdam
-                            molestias quia aperiam odit consequuntur deserunt nihil velit beatae. ipsum dolor sit amet
-                            consectetur adipisicing elit. Quaerat, assumenda asperiores eveniet expedita, voluptas
-                            libero sint nisi, atque maxime hic explicabo? Maiores, voluptates? Vel reiciendis numquam
-                            sit culpa mollitia maiores.</p>
-                    </div>
-
-                    <!-- Imagen de la novedad -->
-                    <figure class="news_picture">
-                        <img src="./images/image6.jpg" alt="Imagen de niños aprendiendo" class="news_img">
-                    </figure>
-                </section>
-                <!-- 2 -->
-                <section class="news_body" data-id="2">
-                    <div class="news_texts">
-                        <h2 class="subtitle">Día de las infancias<span class="news_course"></span></h2>
-                        <p class="news_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, assumenda
-                            asperiores eveniet expedita, voluptas libero sint nisi, atque maxime hic</p>
-                    </div>
-
-                    <!-- Imagen de la novedad -->
-                    <figure class="news_picture">
-                        <img src="./images/image5.jpg" alt="Imagen de niños aprendiendo" class="news_img">
-                    </figure>
-                </section>
-                <!-- 3 -->
-                <section class="news_body" data-id="3">
-                    <div class="news_texts">
-                        <h2 class="subtitle">Muestra de fin de año<span class="news_course"></span></h2>
-                        <p class="news_p">Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet. adipisicing
-                            elit. Quaerat, assumenda asperiores eveniet expedita, voluptas libero sint nisi, atque
-                            maxime hic explicabo? Maiores, voluptates? Vel reiciendis numquam sit culpa mollitia
-                            maiores. Lorem ipsum dolor sit amet consectetur. </p>
-                    </div>
-
-                    <!-- Imagen de la novedad -->
-                    <figure class="news_picture">
-                        <img src="./images/liceo2.jpg" alt="Imagen de niños aprendiendo" class="news_img">
-                    </figure>
-                </section>
-
-                <!-- Flecha next (derecha) -->
-                <img src="./images/right_arrow.svg" alt="Ícono de flecha hacia la derecha" class="news_arrow" id="next">
-            </div>
-        </section>
 
         <!------- PROPUESTAS Sección de Propuestas -->
-        <section class="propuestas container">
+        <section class="propuestas container" id="propuestas">
             <h2 class="subtitle">Propuestas</h2>
             <p class="propuestas_p">La Escuela de Expresión Estética Infantil funciona en el turno mañana y tarde
                 contando con los siguientes talleres. Las edades correspondientes son los años cumplidos hasta el 30 de
@@ -313,17 +258,117 @@
 
                         <b>Inicio de clases:</b> 18/03.<br>
 
-                        <a href="#">Consultas</a>:<a href="mailto:secretaria.edeei@santafeciudad.gov.ar" class="enlace">
+                        <a href="#contacto" class="enlace">Consultas</a>:<a
+                            href="mailto:secretaria.edeei@santafeciudad.gov.ar" class="enlace">
                             secretaria.edeei@santafeciudad.gov.ar</a><br>
 
                         Teléfono – WhatsApp: <a href="tel:+543425303635" class="enlace">342-5303635</a><br>
 
-                        Ubicación: <a href="#" class="enlace">Liceo Municipal</a> (Dique II, Puerto de Santa Fe. Primer
+                        Ubicación: <a href="#liceo" class="enlace">Liceo Municipal</a> (Dique II, Puerto de Santa Fe.
+                        Primer
                         Piso).
                     </p>
                 </article>
             </section>
 
+        </section>
+        <!------- NEWS - Sección de Novedades ---------->
+        <section class="news" id="news">
+            <div class="news_container container">
+                <!-- Flecha before (izquierda) -->
+                <img src="./images/left_arrow.svg" alt="Ícono de flecha hacia la izquierda" class="news_arrow"
+                    id="before">
+                <!-- 1 -->
+                <section class="news_body news_body--show" data-id="1">
+                    <div class="news_texts">
+                        <h2 class="subtitle">Estudiantina<span class="news_course"></span></h2>
+                        <p class="news_p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut earum quibusdam
+                            molestias quia aperiam odit consequuntur deserunt nihil velit beatae. ipsum dolor sit amet
+                            consectetur adipisicing elit. Quaerat, assumenda asperiores eveniet expedita, voluptas
+                            libero sint nisi, atque maxime hic explicabo? Maiores, voluptates? Vel reiciendis numquam
+                            sit culpa mollitia maiores.</p>
+                    </div>
+
+                    <!-- Imagen de la novedad -->
+                    <figure class="news_picture">
+                        <img src="./images/image6.jpg" alt="Imagen de niños aprendiendo" class="news_img">
+                    </figure>
+                </section>
+                <!-- 2 -->
+                <section class="news_body" data-id="2">
+                    <div class="news_texts">
+                        <h2 class="subtitle">Día de las infancias<span class="news_course"></span></h2>
+                        <p class="news_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, assumenda
+                            asperiores eveniet expedita, voluptas libero sint nisi, atque maxime hic</p>
+                    </div>
+
+                    <!-- Imagen de la novedad -->
+                    <figure class="news_picture">
+                        <img src="./images/image5.jpg" alt="Imagen de niños aprendiendo" class="news_img">
+                    </figure>
+                </section>
+                <!-- 3 -->
+                <section class="news_body" data-id="3">
+                    <div class="news_texts">
+                        <h2 class="subtitle">Muestra de fin de año<span class="news_course"></span></h2>
+                        <p class="news_p">Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet. adipisicing
+                            elit. Quaerat, assumenda asperiores eveniet expedita, voluptas libero sint nisi, atque
+                            maxime hic explicabo? Maiores, voluptates? Vel reiciendis numquam sit culpa mollitia
+                            maiores. Lorem ipsum dolor sit amet consectetur. </p>
+                    </div>
+
+                    <!-- Imagen de la novedad -->
+                    <figure class="news_picture">
+                        <img src="./images/liceo2.jpg" alt="Imagen de niños aprendiendo" class="news_img">
+                    </figure>
+                </section>
+
+                <!-- Flecha next (derecha) -->
+                <img src="./images/right_arrow.svg" alt="Ícono de flecha hacia la derecha" class="news_arrow" id="next">
+            </div>
+        </section>
+
+
+        <!-- Seccion de CONTACTO (Formulario de consultas) -->
+        <section class="contacto" id="contacto">
+            <div class="contacto_container container">
+                <h1 class="contacto_title subtitle">Contacto</h1>
+                <menu class="contacto_menu">
+                    <h3 class="contacto_subtitle">Hacé tu consulta</h3>
+                    <form class="contacto_form">
+
+                        <label for="nombre">Tu nombre</label>
+                        <input type="text" name="nombre" required class="contacto_espacio">
+
+                        <label for="correo">Tu email</label>
+                        <input type="email" name="email" required class="contacto_espacio">
+
+                        <label for="comentario">Consulta</label>
+                        <input type="text" name="comentario" required class="contacto_espacio">
+
+                        <p class="contacto_p"> Acepto los terminos y condiciones
+                            <input type="checkbox" name="estudio" value="primarios" required class="contacto_checkbox">
+                        </p>
+
+                        <input id="boton" type="submit" value="Enviar consulta" class="contacto_boton">
+                        <p class="consulta_aceptada">
+                            Gracias por su mensaje. Consulta enviada.
+                        </p>
+                        <p class="consulta_rechazada">
+                            Los datos ingresados son invalidos.
+                        </p>
+                    </form>
+
+                </menu>
+                <p class="contacto_info">
+                    <b>Directora:</b> María Fernanda Yábale <br>
+                    Molino Marconetti – Dique II del Puerto <br>
+                    <a href="tel:+543425303635" class="enlace">(0342) 155 303 635</a> <br>
+                    <b>Atención:</b> de 9 a 12 y de 15 a 18 horas <br>
+                    <a href="mailto:secretaria.edeei@santafeciudad.gov.ar" class="enlace">
+                        secretaria.edeei@santafeciudad.gov.ar</a><br>
+                </p>
+            </div>
         </section>
 
 
@@ -340,19 +385,19 @@
                     </li>
 
                     <li class="nav_items">
-                        <a href="#" class="nav_links">Conocé más</a>
+                        <a href="#about" class="nav_links">Conocé más</a>
                     </li>
 
                     <li class="nav_items">
-                        <a href="#" class="nav_links">Propuestas</a>
+                        <a href="#propuestas" class="nav_links">Propuestas</a>
                     </li>
 
                     <li class="nav_items">
-                        <a href="#" class="nav_links">Novedades</a>
+                        <a href="#news" class="nav_links">Novedades</a>
                     </li>
 
                     <li class="nav_items">
-                        <a href="#" class="nav_links">Contacto</a>
+                        <a href="#contacto" class="nav_links">Contacto</a>
                     </li>
                 </ul>
             </nav>
@@ -374,12 +419,16 @@
             <h3 class="footer_copyright">Copyright © 2024 Municipalidad de la ciudad de Santa Fe. Todos los derechos
                 reservados.</h3>
         </section>
+
+
     </footer>
 
 
     <script src="./js/slider.js"></script>
     <script src="./js/propuestas.js"></script>
     <script src="./js/menu.js"></script>
+    <script src="./js/contacto.js"></script>
+    <script src="./js/scroll.js"></script>
 </body>
 
 </html>
