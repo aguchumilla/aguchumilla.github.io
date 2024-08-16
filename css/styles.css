@@ -36,7 +36,9 @@ body {
     font-family: var(--primary-font);
 
 }
-
+.no-scroll {
+    overflow: hidden;
+}
 .container {
     width: 90%;
     max-width: 1200px;
@@ -62,7 +64,7 @@ body {
     transition: opacity 0.4s ease, visibility 0.4s ease; /* Transición suave para la opacidad y visibilidad */
 }
 
-.boton_subir.boton_subir--show {
+.boton_subir--show {
     opacity: 1; /* Hace el botón visible */
     visibility: visible; /* Lo muestra completamente */
     z-index: 10;
