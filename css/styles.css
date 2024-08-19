@@ -52,6 +52,7 @@ body {
 .enlace {
     text-decoration: none;
     color: var(--color-muni);
+    transition: color 0.4s ease;
 }
 
 .enlace:hover {
@@ -154,7 +155,7 @@ body {
     grid-auto-flow: column;
     grid-auto-columns: max-content;
     gap: 2em;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.3s ease;
 }
 
 .nav_links:hover {
@@ -221,7 +222,7 @@ body {
     text-decoration: none;
     padding: 13px 28px;
     border-radius: 28px;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.3s ease;
 }
 
 .cta:hover {
@@ -475,6 +476,23 @@ body {
     line-height: 1.7;
 }
 
+.reglamento{
+    width:max-content ;
+    font-size: 20px;
+    text-decoration: none;
+    justify-content: flex-start;
+    color: var(--color-muni);
+    padding: 15px 30px;
+    padding-left: 0;
+    border-left: 0;
+    text-align:left;
+    transition: color 0.3s ease;
+}
+.reglamento:hover{
+    color: var(--bg-muni);
+}
+
+
 /* ------------------- Contacto ---------------------- */
 .contacto {
     padding: 50px 0;
@@ -548,7 +566,7 @@ body {
     border: 0;
     border-radius: 28px;
     margin-bottom: 30px;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.3s ease;
 }
 
 .contacto_boton:hover {
@@ -564,7 +582,6 @@ body {
     color: #333;
     display: flex;
     margin-top: 30px;
-    ;
     margin-bottom: 30px;
     align-items: center;
     justify-content: start;
@@ -587,6 +604,7 @@ body {
     border: 1px solid var(--color-muni);
     margin-top: 0;
     padding: 15px 15px;
+    transition: opacity 0.5s ease;
 }
 
 .consulta_rechazada {
@@ -600,6 +618,7 @@ body {
     border: 1px solid var(--color-muni-error);
     margin-top: 0;
     padding: 15px 15px;
+    transition: opacity 0.5s ease;
 }
 
 .contacto_info {
@@ -664,7 +683,7 @@ body {
 .footer_img {
     width: 32px;
     border-radius: 50%;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.3s ease;
 }
 
 .footer_img:hover {
